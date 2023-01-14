@@ -7,15 +7,6 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-// Register Library Service to use it with Dependency Injection in Controllers
-builder.Services.AddScoped<ILibraryService, LibraryService>();
-
 builder.Services.AddControllers()
                 .AddJsonOptions(options =>
                 {
@@ -24,6 +15,13 @@ builder.Services.AddControllers()
                     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Register Library Service to use it with Dependency Injection in Controllers
+builder.Services.AddScoped<ILibraryService, LibraryService>();
 
 // Register database
 builder.Services.AddDbContext<AppDbContext>(options =>
