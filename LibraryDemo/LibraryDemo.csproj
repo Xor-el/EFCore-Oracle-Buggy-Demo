@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
